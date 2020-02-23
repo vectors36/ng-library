@@ -21,10 +21,7 @@ import { UserHomeComponent } from './user/user-home/user-home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginPageComponent,
-    EmailLoginComponent,
-    UserHomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
