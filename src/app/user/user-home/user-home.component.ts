@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { userHomeModel } from './userHome.model';
+import { userHomeService } from './userHome.service';
 
 @Component({
   selector: 'app-user-home',
@@ -8,9 +10,14 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class UserHomeComponent implements OnInit {
 
-  constructor(public afAuth: AngularFireAuth) { }
+  homeCards: userHomeModel[] = [];
+
+  constructor(
+    public afAuth: AngularFireAuth,
+    private userHomeService: userHomeService) { }
 
   ngOnInit(): void {
+    this.homeCards = this.userHomeService.getUserData();
   }
 
 }

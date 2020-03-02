@@ -1,27 +1,43 @@
-<section>
+<section class="bg-colour-class">
     <div *ngIf="afAuth.authState | async as user">
-        <div fxLayout="column" fxLayoutGap="20px" class="user-home-card">
-            <mat-card>
-                <mat-card-header>
+        <div fxFlexFill 
+            [fxLayout]="'row wrap'"
+            fxLayoutGap="10px grid"
+            style="margin:15px">
+
+            <mat-card class="user-home-card">
+                <mat-card-header >
                     <mat-card-title>Title</mat-card-title>
                     <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
-                    <p>Paragraph</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
                     <button mat-stroked-button (click)="afAuth.auth.signOut()">Logout</button>
                 </mat-card-content>
             </mat-card>
-
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Title</mat-card-title>
-                    <mat-card-subtitle>Subtitle</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Paragraph</p>
-                </mat-card-content>
-            </mat-card>
+<!-- 
+            <div *ngFor="let homecard of homeCards">
+                <mat-card class="user-home-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{homecard.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>{{homecard.subtitle}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>
+                            {{homecard.description}}
+                        </p>
+                    </mat-card-content>                    
+                </mat-card>
+            </div> -->
 
         </div>
     </div>
 </section>
+
+
+<!-- fxFlex="0 0 100%" 
+[ngStyle]="{'margin.px': 6, 'margin-bottom.px': 10}"
+[ngStyle.gt-sm]="{'margin.px': 15}"
+fxFlex.gt-sm="0 0 calc(33% -12px)" -->

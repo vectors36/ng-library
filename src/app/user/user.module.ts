@@ -8,6 +8,7 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { userHomeService } from './user-home/userHome.service';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     SharedModule,
     ReactiveFormsModule,
     MatFormFieldModule
-  ]
+  ],
+  providers: [userHomeService]
 })
 export class UserModule { }

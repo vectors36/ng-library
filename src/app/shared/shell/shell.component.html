@@ -28,10 +28,8 @@
                 <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
                     <li class="nav-tree-node">
                         <!-- use a disabled button to provide padding for tree leaf -->
-                        <button mat-icon-button disabled></button>
-
+                        <!-- <button mat-icon-button disabled></button> -->
                         <a routerLink={{node.routeLink}}>{{node.name}}</a>
-
                     </li>
                 </mat-tree-node>
                 <!-- This is the tree node template for expandable nodes -->

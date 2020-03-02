@@ -10,13 +10,7 @@ export class treeNodeService {
             children: [
                 {
                     id: 1, name: "Chpt. Components",
-                    routeLink: "/docs",
-                    children: [
-                        {
-                            id: 1, name: "Page 1",
-                            routeLink: "/docs"
-                        }
-                    ]
+                    routeLink: "/docs"
                 },
                 { id: 2, name: "Chpt. Cable Ladder" },
                 { id: 3, name: "Chpt. Conduits" }
@@ -55,13 +49,7 @@ export class treeNodeService {
             children: [
                 {
                     id: 1, name: "Chpt. Components",
-                    routeLink: "/docs",
-                    children: [
-                        {
-                            id: 1, name: "Page 1",
-                            routeLink: "/docs"
-                        }
-                    ]
+                    routeLink: "/docs"
                 }
             ]
         }
