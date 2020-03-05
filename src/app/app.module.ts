@@ -15,9 +15,7 @@ import { environment } from '../environments/environment';
 //FxFlex
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { treeNodeService } from './shared/services/treeNode.service';
-import { LoginPageComponent } from './user/login-page/login-page.component';
-import { EmailLoginComponent } from './user/email-login/email-login.component';
-import { UserHomeComponent } from './user/user-home/user-home.component';
+import { QuillModule } from 'ngx-quill'
 
 @NgModule({
   declarations: [
@@ -32,7 +30,8 @@ import { UserHomeComponent } from './user/user-home/user-home.component';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    FlexLayoutModule
+    FlexLayoutModule,
+    QuillModule
   ],
   providers: [treeNodeService],
   bootstrap: [AppComponent]

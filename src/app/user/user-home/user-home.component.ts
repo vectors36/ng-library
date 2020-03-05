@@ -12,12 +12,15 @@ export class UserHomeComponent implements OnInit {
 
   homeCards: userHomeModel[] = [];
 
+  testString: string;
+
   constructor(
     public afAuth: AngularFireAuth,
     private userHomeService: userHomeService) { }
 
   ngOnInit(): void {
     this.homeCards = this.userHomeService.getUserData();
+    this.testString = "normal text <b>bold text</b> normal text";
   }
 
 }

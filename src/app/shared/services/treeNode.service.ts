@@ -1,28 +1,31 @@
 import { treeNodeModel } from './treeNode.model';
+import { RouterLink } from '@angular/router';
 
 
 export class treeNodeService {
     private treeNodes: treeNodeModel[] = [
-        { id: 1, name: "Book - Engineering" },
+        { 
+            id: 1, 
+            name: "Admin",
+            children: [
+                {
+                    id: 1,
+                    name: "New Entry",
+                    routeLink: "/admin/new"
+                }
+            ]
+        },
         {
             id: 2,
             name: "Book - SP3D",
             children: [
                 {
-                    id: 1, name: "Chpt. Components",
+                    id: 1, 
+                    name: "Chpt. Components",
                     routeLink: "/docs"
                 },
                 { id: 2, name: "Chpt. Cable Ladder" },
                 { id: 3, name: "Chpt. Conduits" }
-            ]
-        },
-        {
-            id: 3,
-            name: "Book - Microstation",
-            children: [
-                { id: 1, name: "Chpt. Routed", routeLink: "/docs" },
-                { id: 2, name: "Chpt. child 2" },
-                { id: 3, name: "Chpt. child 3" }
             ]
         },
         {

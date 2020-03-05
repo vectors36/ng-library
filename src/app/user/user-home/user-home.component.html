@@ -1,11 +1,11 @@
 <section class="bg-colour-class">
     <div *ngIf="afAuth.authState | async as user">
-        <div fxFlexFill 
+        <!-- <div fxFlexFill 
             [fxLayout]="'row wrap'"
             fxLayoutGap="10px grid"
-            style="margin:15px">
+            style="margin:15px"> -->
 
-            <mat-card class="user-home-card">
+            <!-- <mat-card class="user-home-card">
                 <mat-card-header >
                     <mat-card-title>Title</mat-card-title>
                     <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
@@ -14,7 +14,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
                     <button mat-stroked-button (click)="afAuth.auth.signOut()">Logout</button>
                 </mat-card-content>
-            </mat-card>
+            </mat-card> -->
 <!-- 
             <div *ngFor="let homecard of homeCards">
                 <mat-card class="user-home-card">
@@ -32,7 +32,12 @@
                 </mat-card>
             </div> -->
 
-        </div>
+        <!-- </div> -->
+        <mat-card>
+            <mat-card-header><h1>title</h1></mat-card-header>
+            <!-- <mat-card-content>{{testString}}</mat-card-content> -->
+            <mat-card-content [innerHTML]="testString"></mat-card-content>
+        </mat-card>
     </div>
 </section>
 
