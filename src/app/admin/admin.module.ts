@@ -6,6 +6,7 @@ import { NewEntryComponent } from './new-entry/new-entry.component';
 import { SharedModule } from '../shared/shared.module';
 import { QuillModule } from 'ngx-quill'
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminDBService } from './services/adminData.service';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     ReactiveFormsModule,
     QuillModule.forRoot()
-  ]
+  ],
+  providers: [AdminDBService]
 })
 export class AdminModule { }

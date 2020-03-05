@@ -15,15 +15,15 @@
 
     <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) ? 'false' : 'true'">
-        <div *ngIf="!(afAuth.authState | async)">
+        <!-- <div *ngIf="!(afAuth.authState | async)"> -->
             <mat-nav-list>
 
                 <a mat-list-item routerLink="/docs">Not logged in</a>
                 <a mat-list-item routerLink="/docs">Public stuff</a>
 
             </mat-nav-list>
-        </div>
-        <div *ngIf="afAuth.authState | async as user">
+        <!-- </div> -->
+        <!-- <div *ngIf="afAuth.authState | async as user"> -->
             <mat-tree [dataSource]="treeDataSource" [treeControl]="treeControl" class="nav-tree">
                 <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
                     <li class="nav-tree-node">
@@ -49,7 +49,7 @@
                     </li>
                 </mat-nested-tree-node>
             </mat-tree>
-        </div>
+        <!-- </div> -->
     </mat-sidenav>
     <mat-sidenav-content>
         <!-- TRANSCLUSION -->

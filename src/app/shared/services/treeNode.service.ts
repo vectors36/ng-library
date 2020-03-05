@@ -10,49 +10,13 @@ export class treeNodeService {
             children: [
                 {
                     id: 1,
+                    name: "Login",
+                    routeLink: "/login"
+                },
+                {
+                    id: 2,
                     name: "New Entry",
                     routeLink: "/admin/new"
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Book - SP3D",
-            children: [
-                {
-                    id: 1, 
-                    name: "Chpt. Components",
-                    routeLink: "/docs"
-                },
-                { id: 2, name: "Chpt. Cable Ladder" },
-                { id: 3, name: "Chpt. Conduits" }
-            ]
-        },
-        {
-            id: 4,
-            name: "Book - Microstation",
-            children: [
-                { id: 1, name: "Chpt. Routed", routeLink: "/docs" },
-                { id: 2, name: "Chpt. child 2" },
-                { id: 3, name: "Chpt. child 3" }
-            ]
-        },
-        {
-            id: 5,
-            name: "Book - AutoCAD",
-            children: [
-                { id: 1, name: "Routed", routeLink: "/docs" },
-                { id: 2, name: "child 2" },
-                { id: 3, name: "child 3" }
-            ]
-        },
-        {
-            id: 6,
-            name: "Book - Angular",
-            children: [
-                {
-                    id: 1, name: "Chpt. Components",
-                    routeLink: "/docs"
                 }
             ]
         }

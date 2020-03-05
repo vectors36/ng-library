@@ -15,7 +15,7 @@ import { environment } from '../environments/environment';
 //FxFlex
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { treeNodeService } from './shared/services/treeNode.service';
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
