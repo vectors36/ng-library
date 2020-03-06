@@ -9,8 +9,9 @@ import { AdminDBService } from '../services/adminData.service';
   styleUrls: ['./new-entry.component.scss']
 })
 export class NewEntryComponent implements OnInit {
-  editorForm: FormGroup;
-  editorContent: String;
+  newEntryForm: FormGroup;
+  // editorForm: FormGroup;
+  editorContent: string;
   detailString: string;
 
   editorStyle = {
@@ -22,15 +23,19 @@ export class NewEntryComponent implements OnInit {
   constructor(private adminDBService: AdminDBService) { }
 
   ngOnInit() {
-    this.editorForm = new FormGroup({
-      'editor': new FormControl(null)
+    this.newForm();
+  }
+
+  newForm() {
+    this.newEntryForm = new FormGroup({
+      'title': new FormControl(null),
+      'description': new FormControl(null)
     })
+
   }
 
   onSubmit() {
-    this.editorContent = this.editorForm.get('editor').value;
-    this.tutorialData = this.editorForm.value;
-    this.adminDBService.onAdd(this.tutorialData);
+    this.adminDBService.onAdd(this.newEntryForm.value);
   }
 
 }

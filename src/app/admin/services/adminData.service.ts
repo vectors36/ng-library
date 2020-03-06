@@ -12,7 +12,6 @@ export class AdminDBService {
 
     // Add new document
     onAdd(td: TutorialDataModel) {
-        console.log(td);
         this.db.collection(`tutorials`).add(td);
     }
 }

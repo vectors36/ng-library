@@ -1,3 +1,4 @@
 export interface TutorialDataModel {
-    details: string;
+    title: string;
+    description: string;    
 }
