@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { treeNodeService } from './shared/services/treeNode.service';
 import { QuillModule } from 'ngx-quill';
+import { TutorialsService } from './services/tutorials.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { QuillModule } from 'ngx-quill';
     FlexLayoutModule,
     QuillModule
   ],
-  providers: [treeNodeService],
+  providers: [treeNodeService, TutorialsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

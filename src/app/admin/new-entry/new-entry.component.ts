@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { TutorialDataModel } from '../services/tutorialData.model';
 import { AdminDBService } from '../services/adminData.service';
+import { SnackService } from 'src/app/services/snack.service';
 
 @Component({
   selector: 'app-new-entry',
@@ -12,7 +13,7 @@ export class NewEntryComponent implements OnInit {
   newEntryForm: FormGroup;
   // editorForm: FormGroup;
   editorContent: string;
-  detailString: string;
+  detailString: string;  
 
   editorStyle = {
     height: '300px'
@@ -20,7 +21,7 @@ export class NewEntryComponent implements OnInit {
 
   tutorialData: TutorialDataModel;
 
-  constructor(private adminDBService: AdminDBService) { }
+  constructor(private adminDBService: AdminDBService, private snack: SnackService) { }
 
   ngOnInit() {
     this.newForm();
@@ -29,13 +30,15 @@ export class NewEntryComponent implements OnInit {
   newForm() {
     this.newEntryForm = new FormGroup({
       'title': new FormControl(null),
+      'url': new FormControl(null),
       'description': new FormControl(null)
     })
-
   }
 
   onSubmit() {
     this.adminDBService.onAdd(this.newEntryForm.value);
+    this.newEntryForm.reset();
+    this.snack.NewEntry();
   }
 
 }

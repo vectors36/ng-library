@@ -23,4 +23,13 @@ export class SnackService {
       )
       .subscribe();
   }
+
+  NewEntry() {
+    this.snackBar.open('New Tutorial Added', 'OK', {
+      duration: 5000
+    });
+    return this.snackBar._openedSnackBarRef 
+      .onAction()
+      .subscribe();
+  }
 }

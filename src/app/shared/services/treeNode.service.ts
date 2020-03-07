@@ -19,6 +19,17 @@ export class treeNodeService {
                     routeLink: "/admin/new"
                 }
             ]
+        },
+        { 
+            id: 2, 
+            name: "Tutorials",
+            children: [
+                {
+                    id: 1,
+                    name: "Tutorial List",
+                    routeLink: "/tutorials"
+                }
+            ]
         }
     ];
 

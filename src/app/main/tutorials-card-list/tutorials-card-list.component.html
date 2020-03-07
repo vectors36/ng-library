@@ -1,0 +1,7 @@
+<mat-card *ngFor="let tutorial of tutorials">
+    <mat-card-header>{{tutorial.title}}</mat-card-header>
+    <mat-card-subtitle>{{tutorial.url}}</mat-card-subtitle>
+    <mat-card>
+        <mat-card-content [innerHTML]="tutorial.description"></mat-card-content>
+    </mat-card>
+</mat-card>
