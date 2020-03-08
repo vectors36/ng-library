@@ -6,6 +6,7 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { TutorialsCardListComponent } from './tutorials-card-list/tutorials-card-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { TutorialResolver } from '../services/tutorial.resolver';
 
 
 @NgModule({
@@ -19,6 +20,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
     MainRoutingModule
+  ],
+  providers: [
+    TutorialResolver
   ]
 })
 export class MainModule { }

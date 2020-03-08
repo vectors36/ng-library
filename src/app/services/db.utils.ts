@@ -4,6 +4,5 @@ export function convertSnaps<T>(snaps) {
             id: snap.payload.doc.id,
             ...snap.payload.doc.data()
         };
-
     });
 }
