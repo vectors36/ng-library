@@ -23,13 +23,15 @@ export class TutorialsService {
 
 
   findTutorialByUrl(tutorialUrl: string): Observable<TutorialModel> {
+    // console.log(tutorialUrl);
+    // tutorialUrl = "value";
     return this.db.collection('tutorials',
       ref => ref.where("url", "==", tutorialUrl))
       .snapshotChanges()
       .pipe(
         map(snaps => {
-          const courses = convertSnaps<TutorialModel>(snaps);
-          return courses.length == 1 ? courses[0] : undefined;
+          const tutorials = convertSnaps<TutorialModel>(snaps);
+          return tutorials.length == 1 ? tutorials[0] : undefined;          
         }),
         first()
       );

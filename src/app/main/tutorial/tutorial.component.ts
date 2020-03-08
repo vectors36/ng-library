@@ -11,11 +11,13 @@ import { TutorialModel } from 'src/app/model/tutorial.model';
 export class TutorialComponent implements OnInit {
   tutorial: TutorialModel;
 
-  constructor(private route: ActivatedRoute,
-    private tutorialsService: TutorialsService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private tutorialsService: TutorialsService
+    ) { }
 
   ngOnInit() {    
-    // this.tutorial = this.route.snapshot.data['tutorial'];
+    this.tutorial = this.route.snapshot.data['tutorial'];
   }
 
 
