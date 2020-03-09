@@ -28,6 +28,11 @@ export class treeNodeService {
                     id: 1,
                     name: "Tutorial List",
                     routeLink: "/tutorials"
+                },
+                {
+                    id: 2,
+                    name: "Sasha",
+                    routeLink: "/tutorials/sasha"
                 }
             ]
         }

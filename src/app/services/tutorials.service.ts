@@ -23,8 +23,6 @@ export class TutorialsService {
 
 
   findTutorialByUrl(tutorialUrl: string): Observable<TutorialModel> {
-    // console.log(tutorialUrl);
-    // tutorialUrl = "value";
     return this.db.collection('tutorials',
       ref => ref.where("url", "==", tutorialUrl))
       .snapshotChanges()
