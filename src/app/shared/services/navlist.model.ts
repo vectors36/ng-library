@@ -1,5 +1,9 @@
 export interface navListModel {
-    name?: string;
-    title?: string; 
+    heading: string;
+    subheadings?: navLinks[];
+}
+
+export interface navLinks {
+    title: string;
     url?: string;
 }
