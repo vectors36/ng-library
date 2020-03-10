@@ -18,7 +18,8 @@ const routes: Routes = [
     component: TutorialComponent,
     resolve: {
       tutorial: TutorialResolver
-    }
+    },
+    runGuardsAndResolvers: 'always'
   }
 ];
 
