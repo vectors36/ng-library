@@ -8,6 +8,17 @@
 
     <span class="fill-space"></span>
 
+    <button mat-icon-button class="ml-xs overflow-visible" [matMenuTriggerFor]="userSettings">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
+    <mat-menu #userSettings="matMenu" xPosition="before">
+        <a routerLink="/login">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Log In</span>
+        </a>
+    </mat-menu>
+
 </mat-toolbar>
 
 <!-- SIDENAV -->
