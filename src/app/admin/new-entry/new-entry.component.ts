@@ -15,10 +15,6 @@ export class NewEntryComponent implements OnInit {
   editorContent: string;
   detailString: string;  
 
-  editorStyle = {
-    height: '300px'
-  }
-
   tutorialData: TutorialDataModel;
 
   constructor(private adminDBService: AdminDBService, private snack: SnackService) { }
@@ -36,9 +32,9 @@ export class NewEntryComponent implements OnInit {
   }
 
   onSubmit() {
-    this.adminDBService.onAdd(this.newEntryForm.value);
-    this.newEntryForm.reset();
-    this.snack.NewEntry();
+    // this.adminDBService.onAdd(this.newEntryForm.value);
+    // this.newEntryForm.reset();
+    // this.snack.NewEntry();
   }
 
 }
