@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AccordionMenuComponent } from './shell/accordion-menu/accordion-menu.component';
+import {MatSelectModule} from '@angular/material/select';
 
 const components = [
   ShellComponent
@@ -43,7 +44,8 @@ const modules = [
   MatGridListModule,
   MatTreeModule,
   MatDialogModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatSelectModule
 ];
 
 @NgModule({

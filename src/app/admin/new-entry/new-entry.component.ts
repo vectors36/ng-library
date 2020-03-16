@@ -3,6 +3,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { TutorialDataModel } from '../services/tutorialData.model';
 import { AdminDBService } from '../services/adminData.service';
 import { SnackService } from 'src/app/services/snack.service';
+import { Observable } from 'rxjs';
+import { navListModel } from 'src/app/shared/services/navlist.model';
+import { NavlistService } from 'src/app/shared/services/navlist.service';
 
 @Component({
   selector: 'app-new-entry',
@@ -17,24 +20,37 @@ export class NewEntryComponent implements OnInit {
 
   tutorialData: TutorialDataModel;
 
-  constructor(private adminDBService: AdminDBService, private snack: SnackService) { }
+  chapterItems: Observable<navListModel[]>;
+
+  constructor(
+    private adminDBService: AdminDBService, 
+    private snack: SnackService,
+    private navService:NavlistService
+    ) { }
 
   ngOnInit() {
     this.newForm();
+    this.populateSelectBox();
   }
 
   newForm() {
     this.newEntryForm = new FormGroup({
+      'chapterId': new FormControl(null),
       'title': new FormControl(null),
       'url': new FormControl(null),
       'description': new FormControl(null)
     })
   }
 
+  populateSelectBox(){
+    this.chapterItems = this.adminDBService.loadChapterist();
+  }
+
   onSubmit() {
+    console.log(this.newEntryForm.value)
     // this.adminDBService.onAdd(this.newEntryForm.value);
-    // this.newEntryForm.reset();
-    // this.snack.NewEntry();
+    this.newEntryForm.reset();
+    this.snack.NewEntry();
   }
 
 }

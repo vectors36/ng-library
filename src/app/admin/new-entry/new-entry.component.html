@@ -1,10 +1,22 @@
 <div fxLayout="column">
     <!-- <quill-editor></quill-editor> -->
     <form [formGroup]="newEntryForm" (ngSubmit)="onSubmit()" fxLayout="column">
+
+        <mat-form-field>
+            <mat-label>Chapter</mat-label>
+            <mat-select formControlName="chapterId" required>
+                <mat-option>---</mat-option>
+                <mat-option *ngFor="let chapter of chapterItems | async" [value]="chapter.id">
+                    {{chapter.heading}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
         <mat-form-field>
             <mat-label>Title</mat-label>
             <textarea matInput formControlName="title" placeholder="title"></textarea>
         </mat-form-field>
+
         <mat-form-field>
             <mat-label>URL</mat-label>
             <textarea matInput formControlName="url" placeholder="url"></textarea>
@@ -14,6 +26,5 @@
 
         <button mat-stroked-button>Submit</button>
     </form>
-
 
 </div>
