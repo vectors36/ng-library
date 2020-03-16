@@ -47,8 +47,9 @@ export class NewEntryComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.newEntryForm.value)
+    // console.log(this.newEntryForm.value)
     // this.adminDBService.onAdd(this.newEntryForm.value);
+    this.adminDBService.addTestEntry();
     this.newEntryForm.reset();
     this.snack.NewEntry();
   }
